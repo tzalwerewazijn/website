@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>'Zalwerewazijn</title>
     <style>
+        /* Styles remain unchanged */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -18,7 +19,7 @@
             background-color: #0850a1;
             color: #fff;
             text-align: center;
-            padding: 15px;
+            padding: 5px;
         }
         section {
             display: flex;
@@ -46,7 +47,7 @@
             justify-content: center;
         }
         img {
-            max-width: 100%;
+            max-width: 400px;
             max-height: 400px;
             margin: 10px;
             border-radius: 5px;
@@ -60,7 +61,7 @@
 </head>
 <body>
     <header>
-        <h1>Welkom op www.tzalwerewazijn.be</h1>
+        <h1>Welkom op www.tzalwerewazijn.bes</h1>
     </header>
 
     <section>
@@ -70,13 +71,14 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="activiteiten.html">Activiteiten</a></li>
-                <!-- Voeg meer navigatielinks toe indien nodig -->
+                <!-- Add more navigation links as needed -->
             </ul>
         </div>
         
         <div id="content">
             <div id="welcome-container">
                 <h2>Onze website wordt onder handen genomen...</h2>
+              
             </div>
             
             <h2>We bedanken alvast onze sponsors!</h2>
@@ -84,27 +86,27 @@
         </div>
     </section>
 
-    <script>
-        // Array om bestandsnamen van afbeeldingen op te slaan
+  <script>
+        // Array to store image file names
         var allImages = [
-            "ApoVerlinde.jpg",
-            "BeauBelle.jpg",
-            "Vanhulle.jpg",
-            "deverbloemdehoeve.jpg",
-            "Grebli.JPG",
-            "FilipDeSmul.jpg",
-            "Estelle.jpg",
-            "Debooserie.jpg",
-            // Voeg meer bestandsnamen van afbeeldingen toe indien nodig
+        "ApoVerlinde.jpg",
+        "BeauBelle.jpg",
+        "Vanhulle.jpg",
+	"deverbloemdehoeve.jpg",
+	"Grebli.JPG",
+	"FilipDeSmul.jpg",
+	"Estelle.jpg",
+	"Debooserie.jpg",
+            // Add more image file names as needed
         ];
 
-        // Array om bij te houden welke afbeeldingen al zijn getoond
+        // Array to keep track of displayed images
         var displayedImages = [];
 
-        // Functie om een willekeurige afbeelding uit de array te krijgen
+        // Function to get a random image from the array
         function getRandomImage() {
             if (displayedImages.length === allImages.length) {
-                // Reset de array als alle afbeeldingen zijn getoond
+                // Reset the displayed images array if all images have been shown
                 displayedImages = [];
             }
 
@@ -117,16 +119,16 @@
             return randomImage;
         }
 
-        // Functie om afbeeldingen te tonen
+        // Function to create image elements and append them to the container
         function displayImages() {
             var container = document.getElementById("image-container");
-            container.innerHTML = ""; // Vorige afbeeldingen wissen
+            container.innerHTML = ""; // Clear previous images
 
-            for (var i = 0; i < 2; i++) { // Toon maximaal 3 afbeeldingen
+            for (var i = 0; i < 2; i++) { // Display up to 3 images
                 var randomImage = getRandomImage();
                 var imgElement = document.createElement("img");
                 imgElement.src = randomImage;
-                imgElement.alt = "Willekeurige Afbeelding";
+                imgElement.alt = "Random Image";
                 imgElement.onclick = function() {
                     window.open(this.src, '_blank');
                 };
@@ -134,10 +136,10 @@
             }
         }
 
-        // Eerste weergave
+        // Initial load
         displayImages();
 
-        // Interval om afbeeldingen elke 3 seconden te wijzigen (aanpassen indien nodig)
+        // Set interval to change images every 3 seconds (adjust as needed)
         setInterval(displayImages, 3000);
     </script>
 </body>
