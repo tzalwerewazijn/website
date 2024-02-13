@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'Zalwerewazijn</title>
+    <style>
+        /* Styles remain unchanged */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #0850a1;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+        }
+        section {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+        }
+        #sidebar {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            min-width: 200px;
+        }
+        #content {
+            flex: 1;
+            padding: 20px;
+        }
+        #welcome-container {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        img {
+            max-width: 400px;
+            max-height: 400px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welkom op www.tzalwerewazijn.be</h1>
+    </header>
+
+    <section>
+        <div id="sidebar">
+            <h2>Navigatie</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="activiteiten.html">Activiteiten</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </div>
+        
+        <div id="content">
+            <div id="welcome-container">
+                <h2>Onze website wordt onder handen genomen...</h2>
+              
+            </div>
+            
+            <h2>We bedanken alvast onze sponsors!</h2>
+            <div id="image-container"></div>
+        </div>
+    </section>
+
+  <script>
+        // Array to store image file names
+        var allImages = [
+        "ApoVerlinde.jpg",
+        "BeauBelle.jpg",
+        "Vanhulle.jpg",
+	"deverbloemdehoeve.jpg",
+	"Grebli.JPG",
+	"FilipDeSmul.jpg",
+	"Estelle.jpg",
+	"Debooserie.jpg",
+            // Add more image file names as needed
+        ];
+
+        // Array to keep track of displayed images
+        var displayedImages = [];
+
+        // Function to get a random image from the array
+        function getRandomImage() {
+            if (displayedImages.length === allImages.length) {
+                // Reset the displayed images array if all images have been shown
+                displayedImages = [];
+            }
+
+            var randomImage;
+            do {
+                randomImage = allImages[Math.floor(Math.random() * allImages.length)];
+            } while (displayedImages.includes(randomImage));
+
+            displayedImages.push(randomImage);
+            return randomImage;
+        }
+
+        // Function to create image elements and append them to the container
+        function displayImages() {
+            var container = document.getElementById("image-container");
+            container.innerHTML = ""; // Clear previous images
+
+            for (var i = 0; i < 2; i++) { // Display up to 3 images
+                var randomImage = getRandomImage();
+                var imgElement = document.createElement("img");
+                imgElement.src = randomImage;
+                imgElement.alt = "Random Image";
+                imgElement.onclick = function() {
+                    window.open(this.src, '_blank');
+                };
+                container.appendChild(imgElement);
+            }
+        }
+
+        // Initial load
+        displayImages();
+
+        // Set interval to change images every 3 seconds (adjust as needed)
+        setInterval(displayImages, 3000);
+    </script>
+</body>
+</html>

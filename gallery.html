@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'Zalwerewazijn</title>
+    <style>
+        /* Styles remain unchanged */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+        }
+        section {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+        }
+        #sidebar {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            min-width: 200px;
+        }
+        #content {
+            flex: 1;
+            padding: 20px;
+        }
+        #welcome-container {
+            padding: 5px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left
+        }
+        img {
+            max-width: 400px;
+            max-height: 400px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welkom op www.tzalwerewazijn.be</h1>
+    </header>
+
+    <section>
+        <div id="sidebar">
+            <h2>Navigatie</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="activiteiten.html">Activiteiten</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </div>
+        
+  <div id="content">
+            <div id="welcome-container">
+                <h2>Welcom op onze fotogalerij!</h2>
+              </div>
+            
+            <h2 id="section1">Voorbereiding kermis 2024</h2>
+            <div id="image-container">
+                <img src="WrockContest.jpeg" alt="Image 1">
+      		
+            </div>
+
+            <h2 id="section2">Kermis 2023</h2>
+            <div id="image-container">
+                <img src="Margriet2023.jpeg" alt="Image 2">
+
+                <img src="Darts2023-1.jpeg" alt="Image 2">
+
+                <img src="Darts2023-2.jpeg" alt="Image 2">
+
+                <img src="Kermis2023-2.jpeg" alt="Image 2">
+
+                <img src="Kermis2023-1.jpeg" alt="Image 2">
+
+                <img src="Bumblebees2023.jpeg" alt="Image 2">
+            </div>
+
+  
+        </div>
+    </section>
+
+ 
+</body>
+</html>
