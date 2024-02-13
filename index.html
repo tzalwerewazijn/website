@@ -16,7 +16,8 @@
             min-height: 100vh;
         }
         header {
-            background-color: #0850a1;
+            width: 100%;
+	    background-color: #0850a1;
             color: #fff;
             text-align: center;
             padding: 5px;
@@ -124,7 +125,7 @@
             var container = document.getElementById("image-container");
             container.innerHTML = ""; // Clear previous images
 
-            for (var i = 0; i < 2; i++) { // Display up to 3 images
+            for (var i = 0; i < 2; i++) { // Display up to 2 images
                 var randomImage = getRandomImage();
                 var imgElement = document.createElement("img");
                 imgElement.src = randomImage;
